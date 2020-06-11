@@ -1,0 +1,139 @@
+@import url("colors.css");
+
+*{
+	margin:0px;
+	padding:0px;
+	border:0px;
+	outline:0px;
+	font-family: 'Poppins', sans-serif;
+}
+.hero::before{
+	content:'';
+	background-color:#2d2d2d7a;
+	width:100%;
+	height:100%;
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+.login-box{
+	width:400px;
+	height:100%;
+	background-color:white;
+	position:absolute;
+	display:flex;
+	justify-content:center;
+	flex-direction:column;
+	padding:45px;
+	box-sizing:border-box;
+}
+.login-box h1{
+	width:100%;
+	text-align:center;
+	font-size:27px;
+	font-weight:400;
+	margin-bottom:10px;
+	color:#3e3e3e;
+}
+.field{
+	width:100%;
+	padding:20px;
+	box-sizing:border-box;
+	font-weight:600;
+	font-family: 'Montserrat', sans-serif;
+	border:1px solid #e0e0e0;
+	border-radius:6px;
+	transition:border 0.3s;
+	margin-top:10px;
+}
+.field:focus{
+	border:1px solid var(--ui-color);
+}
+.field::placeholder{
+	color:#cacaca;
+}
+#submit{
+	width:100%;
+	padding:20px;
+	box-sizing:border-box;
+	color:white;
+	background-color:var(--ui-color);
+	border-radius:6px;
+	font-weight:600;
+	font-family: 'Montserrat', sans-serif;
+	margin-top:20px;
+	cursor:pointer;
+	display:block;
+	text-align:center;
+	transition:background-color 0.3s;
+}
+#submit:hover{
+	background-color:#313131;
+}
+.login-box img{
+	margin:0px auto;
+	margin-bottom:20px;
+}
+#reg{
+	margin:0px auto;
+	text-decoration:none;
+	position:relative;
+	top:20px;
+	font-size:14px;
+	font-weight:500;
+	display:block;
+	width:100%;
+	text-align:center;
+	color:#717171;
+}
+.links{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	padding:15px;
+	box-sizing:border-box;
+	text-align:center;
+}
+.links a{
+	text-decoration:none;
+	color:#8e8e8e;
+	font-size:13px;
+	margin-right:10px;
+}
+#err{
+	font-size: 13px;
+	color: #ff6868;
+	margin-bottom: 10px;
+	width: 100%;
+	text-align: center;
+	font-weight: 500;
+}
+.hero{
+	width:100%;
+	height:100vh;
+	background-image:url('back.jpg');
+	background-size:cover;
+	background-position:center;
+	position: relative;
+}
+#failed{
+	width:100%;
+	padding:20px;
+	box-sizing:border-box;
+	color:white;
+	background-color:var(--ui-color);
+	border-radius:6px;
+	font-weight:600;
+	font-family: 'Montserrat', sans-serif;
+	margin-top:20px;
+	cursor:pointer;
+	font-size:14px;
+	display:block;
+	text-align:center;
+	text-decoration:none;
+	transition:background-color 0.3s;
+}
+#failed:hover{
+	background-color:#313131;
+}
