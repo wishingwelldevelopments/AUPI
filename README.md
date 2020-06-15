@@ -1,7 +1,7 @@
 # AUPI
 The Australian Pollutant Index
 
-Replicate Environment
+Reproduce Environment
 ```sql
 -- phpMyAdmin SQL Dump
 -- version 5.0.2
