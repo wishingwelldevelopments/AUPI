@@ -3,48 +3,6 @@ The Australian Pollutant Index
 
 Reproduce Environment
 ```sql
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Generation Time: Jun 11, 2020 at 05:28 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.6
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `dev`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Air_Quality_Data`
---
-
-CREATE TABLE `Air_Quality_Data` (
-  `RID` int(3) NOT NULL,
-  `Location` varchar(36) DEFAULT NULL,
-  `Pollutant` varchar(32) DEFAULT NULL,
-  `Air_Quality_Index` decimal(9,1) DEFAULT NULL,
-  `Data-Rating` int(1) DEFAULT NULL,
-  `Rating` varchar(9) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `Air_Quality_Data`
---
-
 INSERT INTO `Air_Quality_Data` (`RID`, `Location`, `Pollutant`, `Air_Quality_Index`, `Data-Rating`, `Rating`) VALUES
 (1, 'Central-Queensland-Emerald', 'Particle PM10', '19.6', 1, 'Very Good'),
 (2, 'Central-Queensland-Emerald', 'Particle PM2.5', '11.6', 1, 'Very Good'),
@@ -170,97 +128,10 @@ INSERT INTO `Air_Quality_Data` (`RID`, `Location`, `Pollutant`, `Air_Quality_Ind
 (126, 'Central-Queensland-Test', 'Nuclear Particles', '99999999.0', 5, 'Very Poor'),
 (127, 'Central-Queensland-Test1', 'PM10', '32.0', 3, 'fair');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `Users`
---
-
-CREATE TABLE `Users` (
-  `UID` int(11) NOT NULL,
-  `UserEmail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `UserPassword` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `priv` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `Users`
---
-
 INSERT INTO `Users` (`UID`, `UserEmail`, `UserPassword`, `priv`) VALUES
 (1, 'admin@sa.m', '$2y$10$lgQZV7Sq51btyUM0M1/zxu6PM/G4bBh0iNDwBEZERIxnD3jkTo1Uu', 'admin'),
 (6, 'guest@sa.m', '$2y$10$8asxqoI/XTja2pazEELDUu.4sJGhHVhRKs7ehzk7FiKc3l0KSpxH.', 'user');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `User_Alerts`
---
-
-CREATE TABLE `User_Alerts` (
-  `UID` int(11) NOT NULL,
-  `Alert-1-StationName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Alert-1-StationRating` int(10) NOT NULL,
-  `Alert-2-StationName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Alert-2-StationRating` int(10) NOT NULL,
-  `Alert-3-StationName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Alert-3-StationRating` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `User_Alerts`
---
-
 INSERT INTO `User_Alerts` (`UID`, `Alert-1-StationName`, `Alert-1-StationRating`, `Alert-2-StationName`, `Alert-2-StationRating`, `Alert-3-StationName`, `Alert-3-StationRating`) VALUES
 (6, 'Central-Queensland-Emerald', 3, 'Central-Queensland-Blackwater', 4, 'Central-Queensland-West-Mackay', 5);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `Air_Quality_Data`
---
-ALTER TABLE `Air_Quality_Data`
-  ADD PRIMARY KEY (`RID`);
-
---
--- Indexes for table `Users`
---
-ALTER TABLE `Users`
-  ADD PRIMARY KEY (`UID`);
-
---
--- Indexes for table `User_Alerts`
---
-ALTER TABLE `User_Alerts`
-  ADD PRIMARY KEY (`UID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `Air_Quality_Data`
---
-ALTER TABLE `Air_Quality_Data`
-  MODIFY `RID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
-
---
--- AUTO_INCREMENT for table `Users`
---
-ALTER TABLE `Users`
-  MODIFY `UID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `User_Alerts`
---
-ALTER TABLE `User_Alerts`
-  MODIFY `UID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
 ```
